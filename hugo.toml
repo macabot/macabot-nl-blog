@@ -1,0 +1,41 @@
+baseURL = 'https://www.macabot.nl/'
+languageCode = 'nl-nl'
+theme = 'PaperMod'
+title = 'macabot.nl'
+
+# Enable raw HTML inside markdown (useful for custom audio/SVG tags)
+[markup.goldmark.renderer]
+unsafe = true
+
+# ==============================================================================
+# HUGO MODULE MOUNTS
+# ==============================================================================
+# Note: Defining custom mounts overrides Hugo defaults, so we must explicitly
+# re-declare default mounts (content, static, etc.) alongside custom submodules.
+
+[module]
+# Default Hugo Mounts
+[[module.mounts]]
+source = 'content'
+target = 'content'
+
+[[module.mounts]]
+source = 'static'
+target = 'static'
+
+[[module.mounts]]
+source = 'layouts'
+target = 'layouts'
+
+# ----------------------------------------------------------------------------
+# FUTURE SUBMODULE: Gorillaz Mountain (Uncomment when submodule is added)
+# ----------------------------------------------------------------------------
+# Maps docs/ -> content/muziek/mountain (renders at macabot.nl/muziek/mountain/)
+# [[module.mounts]]
+#   source = 'submodules/gorillaz-mountain/docs'
+#   target = 'content/muziek/mountain'
+#
+# Maps dist/ -> static/muziek/mountain (makes SVGs/MP3s accessible)
+# [[module.mounts]]
+#   source = 'submodules/gorillaz-mountain/dist'
+#   target = 'static/muziek/mountain'
