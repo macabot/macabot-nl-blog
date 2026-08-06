@@ -27,15 +27,12 @@ target = 'static'
 source = 'layouts'
 target = 'layouts'
 
-# ----------------------------------------------------------------------------
-# FUTURE SUBMODULE: Gorillaz Mountain (Uncomment when submodule is added)
-# ----------------------------------------------------------------------------
-# Maps docs/ -> content/muziek/mountain (renders at macabot.nl/muziek/mountain/)
-# [[module.mounts]]
-#   source = 'submodules/gorillaz-mountain/docs'
-#   target = 'content/muziek/mountain'
-#
-# Maps dist/ -> static/muziek/mountain (makes SVGs/MP3s accessible)
-# [[module.mounts]]
-#   source = 'submodules/gorillaz-mountain/dist'
-#   target = 'static/muziek/mountain'
+# https://github.com/macabot/gorillaz-mountain/
+#   Mount docs/ to /muziek/gorillaz-mountain/
+[[module.mounts]]
+source = "submodules/gorillaz-mountain/docs"
+target = "content/muziek/gorillaz-mountain"
+#   Mount dist/ to /muziek/gorillaz-mountain/dist/
+[[module.mounts]]
+source = "submodules/gorillaz-mountain/dist"
+target = "content/muziek/gorillaz-mountain/dist"
