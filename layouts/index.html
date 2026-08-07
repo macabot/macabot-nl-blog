@@ -1,0 +1,35 @@
+{{- define "main" }}
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "hideTitle") }}
+  <article class="first-entry home-page">
+    <header class="entry-header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="entry-content">
+      {{ .Content }}
+    </div>
+  </article>
+  {{- end }}
+</div>
+{{- end }}
+
+{{- /* Include Regular Pages AND Section Landing Pages (_index.md) */ -}}
+{{- $pages := where site.Pages "Kind" "in" (slice "page" "section") }}
+{{- $pages = where $pages "IsHome" "!=" true }}
+{{- $pages = where $pages "Params.hidden" "!=" true }}
+
+<div class="post-feed">
+  {{- range $pages }}
+  <article class="post-entry">
+    <header class="entry-header">
+      <h2>{{ .Title }}</h2>
+    </header>
+    <div class="entry-content">
+      <p>{{ .Summary | plainify }}</p>
+    </div>
+    <a class="entry-link" aria-label="post link to {{ .Title }}" href="{{ .Permalink }}"></a>
+  </article>
+  {{- end }}
+</div>
+{{- end }}
