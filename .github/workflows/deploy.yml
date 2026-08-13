@@ -3,25 +3,24 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: ["main"]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  repository_dispatch:
+    types: [submodule-updated] # Triggered automatically when submodules build
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
-          fetch-depth: 0
+
+      # Download pre-compiled assets from gorillaz-mountain release
+      - name: Download gorillaz-mountain assets
+        run: |
+          mkdir -p static/muziek/gorillaz-mountain/dist
+          curl -L -o dist.zip https://github.com/your-username/gorillaz-mountain/releases/download/latest/dist.zip
+          unzip dist.zip -d static/muziek/gorillaz-mountain/
+          rm dist.zip
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -36,14 +35,3 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
