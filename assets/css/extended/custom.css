@@ -1,0 +1,13 @@
+.post-content img[src$=".svg"],
+.post-content svg {
+  display: block;
+  margin: 1.5rem auto;
+  padding: 16px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Keeps dimensions consistent */
+}
+
+[data-theme="dark"] .post-content img[src$=".svg"],
+[data-theme="dark"] .post-content svg {
+  background-color: #ffffff;
+}
