@@ -28,7 +28,7 @@ jobs:
       # Download pre-compiled assets from gorillaz-mountain release
       - name: Download gorillaz-mountain assets
         run: |
-          mkdir -p static/muziek/gorillaz-mountain/dist
+          mkdir -p static/muziek/gorillaz-mountain
           curl -sSLf -o dist.zip "https://github.com/macabot/gorillaz-mountain/releases/download/latest/dist.zip"
           unzip -o dist.zip -d static/muziek/gorillaz-mountain/
           rm dist.zip
