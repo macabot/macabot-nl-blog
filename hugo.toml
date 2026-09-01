@@ -39,9 +39,9 @@ source = "submodules/gorillaz-mountain/dist"
 target = "content/muziek/gorillaz-mountain"
 
 # https://github.com/macabot/ork-ork-ork
-[[module.mounts]]
-source = "submodules/ork-ork-ork/content"
-target = "content/muziek/ork-ork-ork"
-[[module.mounts]]
-source = "submodules/ork-ork-ork/dist"
-target = "content/muziek/ork-ork-ork"
+# [[module.mounts]]
+# source = "submodules/ork-ork-ork/content"
+# target = "content/muziek/ork-ork-ork"
+# [[module.mounts]]
+# source = "submodules/ork-ork-ork/dist"
+# target = "content/muziek/ork-ork-ork"

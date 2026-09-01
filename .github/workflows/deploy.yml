@@ -34,12 +34,12 @@ jobs:
           rm dist.zip
 
       # Download pre-compiled assets from ork-ork-ork release
-      - name: Download ork-ork-ork assets
-        run: |
-          mkdir -p static/muziek/ork-ork-ork
-          curl -sSLf -o dist.zip "https://github.com/macabot/ork-ork-ork/releases/download/latest/dist.zip"
-          unzip -o dist.zip -d static/muziek/ork-ork-ork/
-          rm dist.zip
+      # - name: Download ork-ork-ork assets
+      #   run: |
+      #     mkdir -p static/muziek/ork-ork-ork
+      #     curl -sSLf -o dist.zip "https://github.com/macabot/ork-ork-ork/releases/download/latest/dist.zip"
+      #     unzip -o dist.zip -d static/muziek/ork-ork-ork/
+      #     rm dist.zip
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
