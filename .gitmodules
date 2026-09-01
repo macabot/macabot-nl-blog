@@ -4,3 +4,6 @@
 [submodule "submodules/gorillaz-mountain"]
 	path = submodules/gorillaz-mountain
 	url = git@github.com:macabot/gorillaz-mountain.git
+[submodule "submodules/ork-ork-ork"]
+	path = submodules/ork-ork-ork
+	url = https://github.com/macabot/ork-ork-ork.git
