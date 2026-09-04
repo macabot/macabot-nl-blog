@@ -1,4 +1,5 @@
 baseURL = 'https://www.macabot.nl/'
+defaultContentLanguage = 'nl'
 languageCode = 'nl-nl'
 theme = 'PaperMod'
 title = 'macabot.nl'
@@ -9,6 +10,7 @@ unsafe = true
 
 [params]
 ShowBreadCrumbs = true
+dateFormat = ":date_long"
 
 # ==============================================================================
 # HUGO MODULE MOUNTS

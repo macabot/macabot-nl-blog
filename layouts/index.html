@@ -28,6 +28,14 @@
     <div class="entry-content">
       <p>{{ .Summary | plainify }}</p>
     </div>
+
+    {{- /* Render metadata (Date, Reading time, etc.) */ -}}
+    {{- if not (.Param "hideMeta") }}
+    <footer class="entry-footer">
+      {{- partial "post_meta.html" . -}}
+    </footer>
+    {{- end }}
+
     <a class="entry-link" aria-label="post link to {{ .Title }}" href="{{ .Permalink }}"></a>
   </article>
   {{- end }}
