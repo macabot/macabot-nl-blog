@@ -1,4 +1,4 @@
 {
-    "vslilypond.compilation.additionalCommandLineArguments": "-o ../../build",
+    "vslilypond.compilation.compileOnSave": false,
     "cSpell.language": "nl,en"
 }
