@@ -12,6 +12,16 @@ unsafe = true
 ShowBreadCrumbs = true
 dateFormat = ":date_long"
 
+[[menu.main]]
+name = 'Muziek'
+url = '/muziek/'
+weight = 10
+
+[[menu.main]]
+name = 'Poëzie'
+url = '/poezie/'
+weight = 20
+
 # ==============================================================================
 # HUGO MODULE MOUNTS
 # ==============================================================================
