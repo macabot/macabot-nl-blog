@@ -10,6 +10,7 @@ unsafe = true
 
 [params]
 ShowBreadCrumbs = true
+author = "Michael Cabot"
 dateFormat = ":date_long"
 
 [[menu.main]]
